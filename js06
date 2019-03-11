@@ -1,0 +1,24 @@
+var a = 10;
+
+var x = --a + a++;
+// var x = 9 + a++; lúc này --a nên trả về a = 9
+// var x = 9 + 9; vì lúc này 9++ nó trả về giá trị là 9 rồi mới ++
+console.log(x);
+
+// Nhấn Run để chạy code.
+// Giải thích vì sao kết quả là 18.
+
+///////////////////////////
+
+var a = 10;
+var b = 18;
+
+var x = a--+b++-++b-++a;
+// var x = 10 + 18 -++b-++a ; vì a-- và b++ nên giá trị ở đây sẽ trả về là a = 10 và b = 18 sau đó thì a được gán a = 9 và b = 19; 
+// var x = 10 + 18 - 10 - 20; vì ++a và ++b nên giá trị ở đây sẽ tăng trước là a = 10 và b = 20 sau đó mới trả về giá trị 
+console.log(x);
+
+//10 + 18 - 20 - 10
+// Nhấn Run để chạy code
+// Thêm cách dấu cách vào dòng 4 để code dễ đọc hơn
+// Giải thích tại sao kết quả lại như vậy. Gợi ý: Viết ra từng dòng để giải thích
