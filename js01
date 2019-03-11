@@ -1,0 +1,14 @@
+// Bài tập
+// Khai báo 2 biến x, y nhận giá trị số bất kì
+// Khai báo các biến khác và lần lượt gán giá trị tổng, hiệu, tích, thương của x, y cho từng biến.
+var x = 2, y =3;
+var tong = x + y;
+var hieu = x-y;
+var tich = x*y;
+var thuong = x/y;
+
+console.log('2 số nhập vào là: x='+ x + ' và y='+y);
+console.log('+ Tổng 2 số là: '+tong);
+console.log('+ Hiệu 2 số là: '+hieu);
+console.log('+ Tích 2 số là: '+tich);
+console.log('+ Thương 2 số là: '+thuong);
