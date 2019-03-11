@@ -1,0 +1,98 @@
+/* 
+  Tạo một đối tượng student có thông tin như sau:
+  Tên: Herry,
+  Giới tính: Nam,
+  Tuổi: 18
+  
+  Viết hàm showInfo để in ra các thông tin của đối tượng đó.
+*/
+
+var student = { 
+  name : 'Herry',
+  gender: 'Nam',
+  age : 18
+};
+
+function showInfo(obj) {
+  console.log('Tên: ' + obj.name);
+  console.log('Gender: ' + obj.gender);
+  console.log('Tuổi: ' + obj.age);
+}
+
+showInfo(student); // In ra tất cả thông tin của đối tượng
+
+///////////////////////////////////////////////////////////////
+
+/* 
+  viết hàm updateObj để xóa thuộc tính rollno khỏi đối tượng student
+  và in ra kết quả
+*/
+
+var student = { 
+  name : "David Rayy", 
+  sclass : "VI", 
+  rollno : 12 
+};
+
+function updateObj() {
+  delete student.rollno;
+  console.log(student);
+}
+
+updateObj(); 
+/* 
+    var student = { 
+      name : "David Rayy", 
+      sclass : "VI", 
+    }; 
+*/
+
+////////////////////////////////////////////////////////////////////
+
+/* 
+  Viết hàm lengthObj để in ra độ dài của một đối tượng
+*/
+
+function lengthObj(obj) {
+  var length = 0;
+  for(var o in obj){
+    length += 1;
+  }
+  console.log(length);
+}
+
+var student = {
+  name: "Jerry", 
+  age: 14,
+  role: "student"
+}
+
+lengthObj(student); // length: 3
+
+//////////////////////////////////////////////////////////////////////////
+
+/* 
+  Viết hàm xây dựng Shape để tạo các đối tượng hình học có các thuộc tính sau:
+    {
+      color: String,
+      shape: String,
+      fill: boolean
+    }
+*/
+
+function Shape(color, shape, fill) {
+  this.color = color;
+  this.shape = shape;
+  this.fill = fill;
+}
+
+var shape1 = new Shape("red", "rectangle", true);
+var shape2 = new Shape("orange", "triangle", false);
+var shape3 = new Shape("tomato", "circle", true);
+
+console.log(shape1, shape2, shape3);
+/* 
+  Shape { color: 'red', shape: 'rectangle', fill: true } 
+  Shape { color: 'orange', shape: 'triangle', fill: false } 
+  Shape { color: 'tomato', shape: 'circle', fill: true }
+*/
