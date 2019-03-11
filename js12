@@ -1,0 +1,136 @@
+/**
+ * Điểm khác nhau giữa 2 vòng lặp for...of và for...in, viết code ví dụ
+ */
+
+//For ... of lặp qua các phần tử trong mảng
+//For ... in lặp qua các field trong đối tượng hoặc các colection có key - value
+
+//////////////////////////////
+
+/**
+ * Sử dụng vòng lặp for...of để tính tích của các phần tử trong một array gồm các số
+ */
+
+function multiply(arr) {
+    var tich = 1;
+    for (number of arr){
+      tich *= number;
+    }
+    return tich;
+}
+
+console.log(multiply([2, 3, 4])); // expect: 24
+
+///////////////////////////////////
+
+/**
+ * Sử dụng vòng lặp for...in để in ra tất cả các key trong object sau, in ra cả các key của các nested object (object con lồng bên trong object lớn)
+ * Gợi ý: đây là bài tập khó, bạn nên tìm hiểu về recursive trước
+ */
+
+var apartment = {
+  bedroom: {
+    area: 20,
+    bed: {
+      type: 'twin-bed',
+      price: 100
+    }
+  }
+};
+
+function displayApartment($Object){
+  if(typeof $Object == 'object'){
+    for (o in $Object){      
+      console.log(o);
+      this.displayApartment($Object[o]);
+    }
+  }  
+}
+displayApartment(apartment);
+
+/**
+ * Kết quả mong muốn:
+ * bedroom
+ * area
+ * bed
+ * type
+ * price
+ * Chú ý: không cần hiển thị ra đúng thứ tự như trên
+ */
+///////////////////////////////
+
+mocha.setup('bdd');
+var expect = chai.expect;
+
+function sum(numbers) {
+  // Giả thiết: numbers là một array các số nguyên
+  // Yêu cầu: 
+  //	- trả về tổng các số, dùng vòng lặp for ... of
+  //  - nếu array trống trả về 0
+  
+  var sum = 0;
+  if(numbers.length > 0){
+      for(var i of numbers){
+        sum += i;
+    	}
+  }  
+  return sum;
+}
+
+describe('sum', function () {
+	it('should return 0 if array is empty', function () {
+    expect(sum([])).to.equal(0);
+  });
+  
+  it('should return the sum if array is not empty', function() {
+  	expect(sum([1])).to.equal(1);
+    expect(sum([1, 2, 3])).to.equal(6);
+  });
+});
+
+mocha.run();
+
+//////////////////////////////////////
+
+mocha.setup('bdd');
+var expect = chai.expect;
+
+function has(object, key) {
+  // viết hàm has để kiểm tra xem object có tồn tại 1 key xác định hay không
+  // Tham số:
+  //	- object: object cần kiểm tra
+  //	- key: key cần kiểm tra xem có tồn tại trong object không
+  // Return:
+  //	- true nếu có tồn tại
+  //	- false nếu không tồn tại
+  for (var o in object){
+  		if(o === key){
+      	return true;
+      }
+  }
+  return false;
+}
+
+describe('has', function () {
+	it('should return true if key exists', function () {
+    expect(has({ a: true }, 'a')).to.equal(true);
+  });
+  
+  it('should return true if key exists and value is undefined', function () {
+    expect(has({ a: undefined }, 'a')).to.equal(true);
+  });
+  
+  it('should return true if key exists and value is null', function () {
+    expect(has({ a: null }, 'a')).to.equal(true);
+  });
+  
+  it('should return true if key exists and has a value', function () {
+    expect(has({ a: 5 }, 'a')).to.equal(true);
+  });
+  
+  it('should return false if key does not exist', function() {
+  	expect(has({ a: 'something'}, 'b')).to.equal(false);
+  });
+});
+
+mocha.run();
