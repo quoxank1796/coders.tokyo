@@ -1,0 +1,74 @@
+mocha.setup('bdd');
+var expect = chai.expect;
+
+// Given an array of numbers, return a new array that has only the numbers that are 5 or greater.
+function fiveAndGreaterOnly(arr) {
+		return arr.filter(function(item){
+    	return item >= 5;
+    });
+}
+
+describe('first', function () {
+	it('case 1', function () {
+    expect(fiveAndGreaterOnly([3, 6, 8, 2])).to.eql([6, 8]);
+  });
+  it('case 2', function () {
+    expect(fiveAndGreaterOnly([1, 5, 5])).to.eql([5, 5]);
+  });
+});
+
+mocha.run();
+
+////////////////////////////////
+
+mocha.setup('bdd');
+var expect = chai.expect;
+
+// Given an array of numbers, return a new array that only includes the even numbers.
+function evensOnly(arr) {
+		return arr.filter(function(item){
+    	return item % 2 === 0;
+    });
+}
+
+describe('first', function () {
+	it('case 1', function () {
+    expect(evensOnly([3, 6, 8, 2])).to.eql([6, 8, 2]);
+  });
+  it('case 2', function () {
+    expect(evensOnly([1, 5, 5])).to.eql([]);
+  });
+});
+
+mocha.run();
+
+///////////////////////////////////
+
+mocha.setup('bdd');
+var expect = chai.expect;
+
+// Given a list of students, filter out the famale ones
+function filterOutFemales(members) {
+		return members.filter(function(item){
+    	return item.gender != 'female';
+    });
+}
+
+describe('first', function () {
+	var members = [
+  	{ name: 'Lan', gender: 'female' },
+    { name: 'Linh', gender: 'female' },
+    { name: 'Trung', gender: 'male' },
+    { name: 'Peter', gender: 'gay' }
+  ];
+	it('case 1', function () {
+    expect(filterOutFemales(members)).to.eql(
+    	[	
+      	{ name: 'Trung', gender: 'male' },
+        { name: 'Peter', gender: 'gay' }
+      ]
+    );
+  });
+});
+
+mocha.run();
