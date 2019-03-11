@@ -1,0 +1,21 @@
+/**
+ * Sử dụng kiến thức đã học khai báo một vài object khác nhau mà bạn có thể tưởng tượng ra. Ví dụ:
+ *  var myCommunity = {
+ *    name: 'Coders.Tokyo',
+ *    numberOfMembers: 10000,
+ *    isAwesome: true
+ *  };
+ */
+
+var myCollege = {
+  name: 'Cao đẳng FPT POLYTECHIC HCM',
+  address: '391A Nam Kì Khởi Nghĩa, Quận 3, TP.HCM',
+  isNew : false
+};
+
+var myComputer = {
+  name = 'HP EliteBook 8570w',
+  core = 'I7 3740QM',
+  card = 'AMD FirePro M4000',
+  isNew = false;
+}
