@@ -17,5 +17,8 @@ var myComputer = {
   name = 'HP EliteBook 8570w',
   core = 'I7 3740QM',
   card = 'AMD FirePro M4000',
-  isNew = false;
+  isNew = false
 }
+
+console.log(myCollege);
+console.log(myComputer)
