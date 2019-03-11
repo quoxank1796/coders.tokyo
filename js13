@@ -1,0 +1,39 @@
+mocha.setup('bdd');
+var expect = chai.expect;
+
+function removeEnd(arr, n) {
+/*
+	Viết 1 chương trình xóa đi n phần tử cuối cùng của 1 array
+*/
+  for (var i = 0; i < n; i++){
+			arr.pop();
+  }
+  return arr;
+}
+
+console.log(removeEnd([2, 3, 1, 8, 9, 7], 3));
+
+describe('removeEnd', () => {
+  it('Remove n elements from the endof an given array', () => {
+    expect(removeEnd([2, 3, 1, 8, 9, 7], 3)).to.eql([2, 3, 1]);
+  });
+});
+
+mocha.run();
+
+///////////////////////////////
+/** Write a JavaScript function to get the first element of an array. Passing a parameter 'n' will return the first 'n' elements of the array. 
+ * 
+ * Bắt đầu từ bài này các câu hỏi sẽ xuất hiện bằng tiếng Anh nhiều hơn.
+ * Đây cũng là một kĩ năng không thể thiếu của develop vì: các nguồn tra cứu tốt đa phần là tiếng Anh, ví dụ như stackoverflow.com
+*/
+
+function first(arr, n) {
+  var newArray = [];
+  for (var i = 0; i < n; i++){
+    newArray.push(arr[i]);
+  }
+  return newArray;
+}
+
+console.log(first([1, 2, 3], 2)); // expect [1, 2]
