@@ -1,0 +1,6 @@
+/**
+ * Cách sử dụng Array và Object khác nhau như thế nào. Viết câu trả lời ở phía dưới.
+ */
+
+// Object dùng để mô tả 1 đối tượng chứa nhiều thành phần dữ liệu.
+// Array là 1 Collection giúp chúng ta lưu trữ các kiểu dữ liệu, đối tượng.. Vì là 1 Collection nên chúng ta có thể hàm hỗ trợ giúp chúng ta quản lý tốt hơn..
