@@ -1,0 +1,111 @@
+/* 
+  Dùng hàm powerup tính bình phương các số chia hết cho 2 trong mảng truyền vào
+*/
+
+function powerup(arr) {
+    var newPowerUp = arr.map(function(num){
+        return num % 2 === 0 ? Math.pow(num,2) : num;
+    });
+    console.log(newPowerUp);
+}
+
+powerup([0, 3, 6, 7, 4]); // [0, 3, 36, 7, 16] 
+
+////////////////////////////////////////////////////////
+
+/* 
+  Dùng hàm average tính điểm trung bình 3 môn của một học sinh.
+  Làm tròn điểm trung bình
+*/
+
+function average(arr) {
+    var average = Math.ceil(arr.reduce(function(a,b){
+      return a + b;
+    }) / arr.length);
+    console.log(average);
+}
+
+average([8, 8 , 6.75]) // 8
+
+//////////////////////////////////////////////////////////
+
+/* 
+  Viết hàm positiveNumber để chuyển các số âm trong một mảng thành các số dương.
+
+  Yêu cầu sử dụng Math Object
+*/
+
+function positiveNumber(arr) {
+  var newArr = arr.map(function(num){
+    return Math.abs(num);
+  });
+  console.log(newArr);
+}
+
+positiveNumber([-2, 3, -4, -7, 10]); // [ 2, 3, 4, 7, 10 ]
+
+//////////////////////////////////////////////////////////////
+
+/*
+  Viết hàm random để in ra một số ngẫu nhiên từ 1 - 100
+*/
+
+function random() {
+  var r = Math.random();
+  console.log(r);
+  var rd = Math.floor(r * 100) + 1 ;
+  console.log(rd);
+}
+
+random(); // The number between 1 and 100
+
+////////////////////////////////////////////////////////////////
+
+/*
+  Viết hàm rightTriangle để kiểm tra 3 cạnh của một tam giác và cho biết đó có phải là tam giác vuông hay không? 
+    Nếu có thì in ra "Yes"
+    Không thì in ra "No"
+*/
+
+function rightTriangle(a, b, c) {
+  var a = Math.pow(a,2);
+  var b = Math.pow(b,2);
+  var c = Math.pow(c,2);
+  return a + b == c || a + c == b || b + c == a ? 'Yes' : 'No';
+}
+
+console.log(rightTriangle(3, 4, 5)); // "Yes"
+
+console.log(rightTriangle(1, 2, 3)); // "No"
+
+////////////////////////////////////////////////////////////////////
+
+/* 
+  Viết hàm trigonim để in ra 3 giá trị sin cos tan của một số nhập vào
+*/
+
+function trigonim(number) {
+    console.log('Sin('+number+') = '+ Math.sin(number));
+    console.log('Cos('+number+') = '+ Math.cos(number));
+    console.log('Tan('+number+') = '+ Math.tan(number));
+}
+
+trigonim(45);
+// Sin(45) = 0.850
+// Cos(45) = 0.525
+// Tan(45) = 1.619
+
+///////////////////////////////////////////////////////////////
+
+/* 
+  Viết hàm circleMachine() tính chu vi và diện tích hình tròn khi biết bán kính
+*/
+
+function circleMachine(r) {
+    console.log('Diện Tích: '+ Math.pow(r,2) * Math.PI);
+    console.log('Chu vi: '+ r * 2 * Math.PI);
+}
+
+circleMachine(3);
+// Chu vi: 18.85
+// Diện tích: 28.27
